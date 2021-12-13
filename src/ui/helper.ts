@@ -17,6 +17,9 @@ export interface DefaultStyledProps {
   marginTop?: CSSProperties["marginTop"];
   marginBottom?: CSSProperties["marginBottom"];
   position?: CSSProperties["position"];
+  boxShadow?: CSSProperties["boxShadow"];
+  borderRadius?: CSSProperties["borderRadius"];
+  overflow?: CSSProperties["borderRadius"];
 }
 
 export const defaultStyledProps = ({
@@ -36,6 +39,9 @@ export const defaultStyledProps = ({
   marginTop,
   marginBottom,
   position,
+  boxShadow,
+  borderRadius,
+  overflow
 }: DefaultStyledProps) => {
   return `
     flex-direction: ${flexDirection ? flexDirection : ""};
@@ -54,5 +60,8 @@ export const defaultStyledProps = ({
     margin-top: ${marginTop ? marginTop : ""};
     margin-bottom: ${marginBottom ? marginBottom : ""};
     position: ${position ? position : ""};
+    box-shadow: ${boxShadow ? boxShadow : ""};
+    border-radius: ${borderRadius ? borderRadius : ""};
+    overflow: ${overflow ? overflow : ""};
   `;
 };

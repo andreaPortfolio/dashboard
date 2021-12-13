@@ -19,6 +19,8 @@ export const palette = {
       primary: palette.blue,
       secondary: palette.gray,
       tertiary: palette.grayDark,
+      lightText: palette.grayLight,
+      mediumText: palette.grayMedium,
       label: palette.grayMedium,
       border: palette.grayLight,
       white: palette.white,

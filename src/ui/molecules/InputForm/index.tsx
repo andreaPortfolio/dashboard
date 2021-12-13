@@ -12,7 +12,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement>{
 
 const InputForm = ({labelText, error, name,...rest}: Props)=>{
 
-return <Flex flexDirection='column'>
+return <Flex flexDirection='column' width="100%">
         <Label htmlFor={name}>{labelText}</Label>
         <Box height='6px'/>
         <Input 

@@ -1,5 +1,21 @@
-const Login = ()=>{
-    return <div>Login</div>
-}
+import { Flex, Login } from "../..";
 
-export default Login;
+
+
+const LoginPage = () => {
+
+  return (
+    <Flex
+      height="100vh"
+      width="100%"
+      backgroundColor="secondary"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Login/>
+    </Flex>
+  );
+};
+
+export default LoginPage;

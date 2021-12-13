@@ -1,9 +1,9 @@
-import { Flex } from "../../";
+import { Flex } from "../..";
 
 
 const Home = ()=>{
     return  <Flex flexDirection="column">
-    <h1>Home</h1>
+    <h1>Subscriptions</h1>
   </Flex>
 }
 
