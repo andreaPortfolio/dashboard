@@ -2,6 +2,8 @@ import { useState, ChangeEvent } from "react";
 import {useNavigate} from 'react-router-dom';
 import { Flex, InputForm, Box, Text, Button } from "../..";
 import {ROUTES, EMAIL_REGEX, PASSWORD_REGEX} from '../../../utils';
+import {useDispatch} from 'react-redux';
+import {setLogin} from '../../../store/login/action';
 
 
 const Login = () => {
@@ -11,6 +13,9 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState(false);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+
 
   const onClickButton = (): void | null => {
     if (!EMAIL_REGEX.test(email)) {
@@ -22,6 +27,7 @@ const Login = () => {
     if (!EMAIL_REGEX.test(email) || !PASSWORD_REGEX.test(password)) {
       return null;
     }
+    dispatch(setLogin(true));
     navigate(ROUTES.home);
   };
 
