@@ -19,7 +19,9 @@ export interface DefaultStyledProps {
   position?: CSSProperties["position"];
   boxShadow?: CSSProperties["boxShadow"];
   borderRadius?: CSSProperties["borderRadius"];
-  overflow?: CSSProperties["borderRadius"];
+  textOverflow?: CSSProperties["textOverflow"];
+  overflow?: CSSProperties["overflow"];
+  whiteSpace?: CSSProperties["whiteSpace"];
 }
 
 export const defaultStyledProps = ({
@@ -41,7 +43,9 @@ export const defaultStyledProps = ({
   position,
   boxShadow,
   borderRadius,
-  overflow
+  overflow,
+  textOverflow,
+  whiteSpace
 }: DefaultStyledProps) => {
   return `
     flex-direction: ${flexDirection ? flexDirection : ""};
@@ -62,6 +66,9 @@ export const defaultStyledProps = ({
     position: ${position ? position : ""};
     box-shadow: ${boxShadow ? boxShadow : ""};
     border-radius: ${borderRadius ? borderRadius : ""};
+    overflow: ${overflow ? overflow : ""};
+    text-overflow: ${(textOverflow ? textOverflow : "")};
+    white-space: ${whiteSpace ? whiteSpace : ""};
     overflow: ${overflow ? overflow : ""};
   `;
 };

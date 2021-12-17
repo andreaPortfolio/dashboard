@@ -1,13 +1,12 @@
-
 import { Flex } from "../..";
+import { Articles } from "../..";
 
+const ArticlesPage = () => {
+  return (
+    <Flex justifyContent="center">
+      <Articles />
+    </Flex>
+  );
+};
 
-const Articles = ()=>{
-
-
-    return  <Flex justifyContent="center" >
-
-  </Flex>
-}
-
-export default Articles;
+export default ArticlesPage;

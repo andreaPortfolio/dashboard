@@ -20,7 +20,7 @@ import {
 } from "../ui";
 import { ROUTES } from "../utils";
 import { useSelector } from "react-redux";
-import { RootState } from "../store/applicationStore";
+import { RootState } from "../store";
 import { ReactElement } from "react";
 
 const RequireAuth = (): ReactElement => {

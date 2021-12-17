@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import { Flex, InputForm, Box, Text, Button } from "../..";
 import {ROUTES, EMAIL_REGEX, PASSWORD_REGEX} from '../../../utils';
 import {useDispatch} from 'react-redux';
-import {setLogin} from '../../../store/login/action';
+import {setLogin} from '../../../store';
 
 
 const Login = () => {
