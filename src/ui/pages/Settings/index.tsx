@@ -4,10 +4,6 @@ import { Flex } from "../..";
 const Home = ()=>{
     return  <Flex flexDirection="column">
     <h1>Settings</h1>
-        
-    <div className="fa-3x">
-  <i className="fa-3x fas fa-spinner fa-spin"/>
-</div>
   </Flex>
 }
 
