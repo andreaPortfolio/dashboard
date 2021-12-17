@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { loginSlice } from "./login/reducer";
 import { fetchPostsSlice } from "./posts/reducer";
+import { fetchEmployeesSlice} from "./employees";
 
 export const store = configureStore({
   reducer: {
     login: loginSlice.reducer,
     posts: fetchPostsSlice.reducer,
+    employees: fetchEmployeesSlice.reducer
   },
 });
 
