@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchEmployees } from "../actions";
-import {InitialStateEmployee} from '../../types';
+import {InitialStateEmployees} from '../../types';
 
-const initialState: InitialStateEmployee = {
+const initialState: InitialStateEmployees = {
   data: [],
   loading: false,
   error: "",

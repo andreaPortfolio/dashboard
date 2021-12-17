@@ -1,13 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
+import {useDispatch} from 'react-redux';
 import { loginSlice } from "./login/reducer";
 import { fetchPostsSlice } from "./posts/reducer";
-import { fetchEmployeesSlice} from "./employees";
+import { fetchEmployeesSlice, reducerEmployeeSlice} from "./employees";
 
 export const store = configureStore({
   reducer: {
     login: loginSlice.reducer,
     posts: fetchPostsSlice.reducer,
-    employees: fetchEmployeesSlice.reducer
+    employees: fetchEmployeesSlice.reducer,
+    employee: reducerEmployeeSlice.reducer
   },
 });
 
@@ -15,3 +17,6 @@ export const store = configureStore({
 export type RootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;
+
+
+export const useAppDispatch = () => useDispatch<AppDispatch>();

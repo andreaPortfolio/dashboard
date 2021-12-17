@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import { Table, Flex } from "../..";
-import { RootState, fetchEmployees } from "../../../store";
+import { Table, Flex, Button } from "../..";
+import { RootState, fetchEmployees, postEmployee, useAppDispatch } from "../../../store";
 
 const COLUMNS: { title: string; name: string }[] = [
   { name: "id", title: "Id" },
@@ -11,7 +11,7 @@ const COLUMNS: { title: string; name: string }[] = [
 ];
 
 const Agents = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const employees = useSelector((state: RootState) => state.employees.data);
   const loading = useSelector((state: RootState) => state.employees.loading);
 
@@ -24,8 +24,23 @@ const Agents = () => {
     return <Flex>Loading...</Flex>;
   }
 
+  const handleClick=async ()=>{
+
+    const response = await dispatch(postEmployee({
+      first_name: 'Bilbo', 
+      last_name: 'Baggins', 
+      email: 'bilbo.baggins@mordor.com'}));
+
+      if(response?.payload?.id){
+        dispatch(fetchEmployees());
+      }
+
+
+  }
+
   return (
-    <Flex>
+    <Flex flexDirection="column">
+      <Button onClick={handleClick}>New</Button>
       <Table data={employees} columns={COLUMNS} />
     </Flex>  
   );
